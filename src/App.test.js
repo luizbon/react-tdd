@@ -29,13 +29,21 @@ describe('with breadcrumb', () => {
       text: 'step 2'
     }];
     const breadcrumb = shallow(<Breadcrumb items={items} />)
-
-    it('should render li with text', () => {
       const li = breadcrumb.find('li');
+
+    it('should render correct number', () => {
       expect(li).toHaveLength(2);
+    });
+
+    it('should render text', () => {
       items.forEach((item, index) => {
         expect(li.at(index)).toHaveText(items[index].text);
       })
+    })
+
+    it('should render anchors', () => {
+      const anchor = li.at(0).find('a');
+      expect(anchor).toBePresent();
     });
   });
 });
