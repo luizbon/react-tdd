@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import App from './App';
+import App, { Breadcrumb } from './App';
 
 it('renders without crashing', () => {
   const app = mount(<App />);
@@ -8,7 +8,15 @@ it('renders without crashing', () => {
 });
 
 describe('with breadcrumb', () => {
-  const app = shallow(<App />);
-  const breadcrumb = app.find('Breadcrumb');
-  expect(breadcrumb).toHaveLength(1);
+  it('should render breadcrumb', () => {
+    const app = shallow(<App />);
+    const breadcrumb = app.find('Breadcrumb');
+    expect(breadcrumb).toHaveLength(1);
+  })
+
+  it('should render ul', () => {
+    const breadcrumb = shallow(<Breadcrumb />);
+    const ul = breadcrumb.find('ul');
+    expect(ul).toHaveLength(1);
+  })
 });
