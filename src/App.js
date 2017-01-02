@@ -3,9 +3,14 @@ import logo from './logo.svg';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
-export const Breadcrumb = () => (<ul><li></li></ul>);
+export const Breadcrumb = ({items}) => (<ul>
+  {items.map(() => (<li></li>))}
+</ul>);
 
 Breadcrumb.displayName = 'Breadcrumb';
+Breadcrumb.defaultProps = {
+  items: []
+}
 
 class App extends Component {
   render() {
