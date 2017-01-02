@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
 export const Breadcrumb = ({items}) => (<ul>
-  {items.map((item) => (<li key={item}></li>))}
+  {items.map((item) => (<li key={item}>{item}</li>))}
 </ul>);
 
 Breadcrumb.displayName = 'Breadcrumb';
