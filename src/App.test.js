@@ -18,8 +18,8 @@ describe('with breadcrumb', () => {
     const breadcrumb = shallow(<Breadcrumb />);
     const ul = breadcrumb.find('ul');
     expect(ul).toBePresent();
+    expect(ul).toHaveClassName('breadcrumb')
   })
-
   
   describe('with li items', () => {
     const items = [{
