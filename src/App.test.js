@@ -21,9 +21,9 @@ describe('with breadcrumb', () => {
   })
 
   it('should render li', () => {
-    const items = ['step 1'];
+    const items = ['step 1', 'step 2'];
     const breadcrumb = shallow(<Breadcrumb items={items} />)
     const li = breadcrumb.find('li');
-    expect(li).toHaveLength(1);
+    expect(li).toHaveLength(2);
   });
 });
