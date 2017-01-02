@@ -19,4 +19,11 @@ describe('with breadcrumb', () => {
     const ul = breadcrumb.find('ul');
     expect(ul).toHaveLength(1);
   })
+
+  it('should render li', () => {
+    const items = ['step 1'];
+    const breadcrumb = shallow(<Breadcrumb items={items} />)
+    const li = breadcrumb.find('li');
+    expect(li).toHaveLength(1);
+  });
 });
