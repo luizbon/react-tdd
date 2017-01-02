@@ -5,6 +5,8 @@ import './App.css';
 
 export const Breadcrumb = () => (<ul></ul>);
 
+Breadcrumb.displayName = 'Breadcrumb';
+
 class App extends Component {
   render() {
     return (
