@@ -4,7 +4,7 @@ import App, { Breadcrumb } from './App';
 
 it('renders without crashing', () => {
   const app = mount(<App />);
-  expect(app).toHaveLength(1);
+  expect(app).toBePresent();
 });
 
 describe('with breadcrumb', () => {
@@ -17,7 +17,7 @@ describe('with breadcrumb', () => {
   it('should render ul', () => {
     const breadcrumb = shallow(<Breadcrumb />);
     const ul = breadcrumb.find('ul');
-    expect(ul).toHaveLength(1);
+    expect(ul).toBePresent();
   })
 
   it('should render li', () => {
@@ -25,5 +25,8 @@ describe('with breadcrumb', () => {
     const breadcrumb = shallow(<Breadcrumb items={items} />)
     const li = breadcrumb.find('li');
     expect(li).toHaveLength(2);
+    items.forEach((item, index) => {
+      expect(li.at(index)).toHaveText(items[index]);
+    })
   });
 });

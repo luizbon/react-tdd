@@ -32,6 +32,7 @@
     "html-webpack-plugin": "^2.24.0",
     "http-proxy-middleware": "0.17.2",
     "jest": "^18.0.0",
+    "jest-enzyme": "^2.1.0-rc1",
     "json-loader": "0.5.4",
     "object-assign": "^4.1.0",
     "path-exists": "^3.0.0",
@@ -58,6 +59,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],

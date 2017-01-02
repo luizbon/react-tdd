@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
 export const Breadcrumb = ({items}) => (<ul>
-  {items.map(() => (<li></li>))}
+  {items.map((item) => (<li key={item}></li>))}
 </ul>);
 
 Breadcrumb.displayName = 'Breadcrumb';
@@ -20,9 +20,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <Breadcrumb />
-        </p>
+        </div>
       </div>
     );
   }
