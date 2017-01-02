@@ -11,7 +11,7 @@ const renderItem = (item) => {
   return (<li key={item.text}>{item.text}</li>)
 }
 
-export const Breadcrumb = ({items}) => (<ul>
+export const Breadcrumb = ({items}) => (<ul className="breadcrumb">
   {items.map(renderItem)}
 </ul>);
 
@@ -19,6 +19,13 @@ Breadcrumb.displayName = 'Breadcrumb';
 Breadcrumb.defaultProps = {
   items: []
 }
+
+const breadcrumb = [{
+  text: 'Home',
+  url: 'http://localhost:3000/'
+}, {
+  text: 'Step 1'
+}];
 
 class App extends Component {
   render() {
@@ -29,7 +36,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="App-intro">
-          <Breadcrumb />
+          <Breadcrumb items={breadcrumb} />
         </div>
       </div>
     );
