@@ -3,8 +3,16 @@ import logo from './logo.svg';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
+const renderItem = (item) => {
+  if(item.url) {
+    return (<li key={item.text}><a href={item.url}>{item.text}</a></li>);
+  }
+
+  return (<li key={item.text}>{item.text}</li>)
+}
+
 export const Breadcrumb = ({items}) => (<ul>
-  {items.map((item) => (<li key={item.text}>{item.text}</li>))}
+  {items.map(renderItem)}
 </ul>);
 
 Breadcrumb.displayName = 'Breadcrumb';
