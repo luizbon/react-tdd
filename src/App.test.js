@@ -20,13 +20,22 @@ describe('with breadcrumb', () => {
     expect(ul).toBePresent();
   })
 
-  it('should render li', () => {
-    const items = ['step 1', 'step 2'];
+  
+  describe('with li items', () => {
+    const items = [{
+      text: 'step 1',
+      url: 'http://localhost:3000/'
+    }, {
+      text: 'step 2'
+    }];
     const breadcrumb = shallow(<Breadcrumb items={items} />)
-    const li = breadcrumb.find('li');
-    expect(li).toHaveLength(2);
-    items.forEach((item, index) => {
-      expect(li.at(index)).toHaveText(items[index]);
-    })
+
+    it('should render li with text', () => {
+      const li = breadcrumb.find('li');
+      expect(li).toHaveLength(2);
+      items.forEach((item, index) => {
+        expect(li.at(index)).toHaveText(items[index].text);
+      })
+    });
   });
 });
