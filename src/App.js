@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
-const Breadcrumb = () => (null);
+export const Breadcrumb = () => (<ul></ul>);
 
 class App extends Component {
   render() {
