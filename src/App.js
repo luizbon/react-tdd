@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
-export const Breadcrumb = () => (<ul></ul>);
+export const Breadcrumb = () => (<ul><li></li></ul>);
 
 Breadcrumb.displayName = 'Breadcrumb';
 
